@@ -42,7 +42,7 @@ jobs:
       
       - run:
           name: Copy artifacts to single directory
-          command: mkdir artifacts && cp build/prod/*.zip artifacts/ && cp build/note/CyberChef.js artifacts/
+          command: mkdir artifacts && cp build/prod/*.zip artifacts/ && cp build/node/CyberChef.js artifacts/
       - store_artifacts:
           path: artifacts/
 
