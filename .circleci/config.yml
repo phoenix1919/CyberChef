@@ -36,11 +36,12 @@ jobs:
       - run: grunt node
       - run: grunt prod --msg="$COMPILE_MSG"
       - run: xvfb-run -a grunt testui
+      
+      - run: grunt exec:sitemap
+      - run: grunt copy:ghPages
+      - run: ls build/prod/
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests!
-      - run: yarn test
