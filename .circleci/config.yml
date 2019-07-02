@@ -35,7 +35,7 @@ jobs:
       - run: grunt docs
       - run: grunt node
       - run: grunt prod --msg="$COMPILE_MSG"
-      - run: xvfb-run --server-args="-screen 0 1200x800x24" grunt testui
+      - run: xvfb-run -a grunt testui
 
       - save_cache:
           paths:
