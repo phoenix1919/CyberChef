@@ -40,10 +40,11 @@ jobs:
       - run: grunt exec:sitemap
       - run: grunt copy:ghPages
       
+      - run:
+          name: Copy artifacts to single directory
+          command: mkdir artifacts && cp build/prod/*.zip artifacts/ && cp build/note/CyberChef.js artifacts/
       - store_artifacts:
-          path: build/prod/*.zip
-      - store_artifacts:
-          path: build/node/CyberChef.js
+          path: artifacts/
 
       - save_cache:
           paths:
