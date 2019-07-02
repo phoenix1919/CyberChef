@@ -28,7 +28,7 @@ jobs:
 
       - run: yarn install
       
-      - run: npm install grunt
+      - run: sudo npm install -g grunt
       
       - run: grunt lint
       - run: grunt test
